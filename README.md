@@ -1,2 +1,2 @@
-# web_visualizer
+# Web Visualizer
 Visualize Objects
