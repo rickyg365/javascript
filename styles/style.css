@@ -1,0 +1,39 @@
+:root {
+    --grid-gap: 1rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex-ctr {
+    display: flex;
+    gap: var(--grid-gap);
+    align-items: center;
+    justify-content: center;
+}
+
+
+.flex-ctr-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--grid-gap);
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+
+.visuals {
+    width: 50vw;
+    gap: var(--grid-gap);
+}
+
+.square {
+    height: 50px;
+    width: 50px;
+
+    background: blueviolet;
+}

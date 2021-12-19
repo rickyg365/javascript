@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles/style.css">
+
+    <title>Web Visualizer</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">settings</a></li>
+        </ul>
+    </nav>
+    <main class="flex-ctr">
+        <section id="visual" class="visuals flex-ctr-col">
+
+        </section>
+        <section class="parameters">
+            <form id="mydata">
+                <input type="number" name="rows" id="row" class="row-parameter">
+                <input type="number" name="cols" id="col" class="col-parameter">
+
+
+                <button type="submit" onclick="updateDisplay()">Apply</button>
+            </form>
+        </section>
+        <section class="toolbar">
+
+        </section>
+
+    </main>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
