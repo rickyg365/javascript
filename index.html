@@ -11,22 +11,24 @@
 </head>
 <body>
     <nav>
-        <ul>
-            <li><a href="#">settings</a></li>
+        <ul class="nav-list">
+            <li><a class="nav-item" href="#" onclick="resetDisplay()">Reset</a></li>
         </ul>
     </nav>
     <main class="flex-ctr">
-        <section id="visual" class="visuals flex-ctr-col">
+        <section id="visual" class="visuals flex-ctr-col-gap">
 
         </section>
         <section class="parameters">
-            <form id="mydata">
-                <input type="number" name="rows" id="row" class="row-parameter">
-                <input type="number" name="cols" id="col" class="col-parameter">
+            <div class="form-container">
+                <form id="mydata">
+                    <input type="number" name="rows" id="row" class="row-parameter">
+                    <input type="number" name="cols" id="col" class="col-parameter">
 
-
-                <button type="submit" onclick="updateDisplay()">Apply</button>
-            </form>
+                    <div class="spacer"></div>
+                    <button type="submit" onclick="updateDisplay()">Apply</button>
+                </form>
+            </div>
         </section>
         <section class="toolbar">
 

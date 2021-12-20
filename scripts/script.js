@@ -45,6 +45,13 @@ let printGrid = (grid) => {
     return 1;
 }
 
+function resetDisplay() {
+    let visual_section = document.getElementById("visual");
+
+    while (visual_section.firstChild) {
+        visual_section.removeChild(visual_section.firstChild);
+    }
+}
 
 function updateDisplay() {
     // Get Data
@@ -65,6 +72,8 @@ function updateDisplay() {
     let display = createBlankGrid(row_num, col_num);
 
     printGrid(display);
+    // setting up dom
+    resetDisplay();
 
     let new_display = iterateGrid(display, (item) => {
         // do something for each item
@@ -76,14 +85,16 @@ function updateDisplay() {
     })
     let chosen_parent_element = document.getElementById("visual")
 
+    // Iterate through new display
     for (let i=0; i < new_display.length; i++) {
         let new_row_div = document.createElement('div');
-        new_row_div.classList.add(`row-${i}`, "flex-ctr");
+        new_row_div.classList.add(`row-${i}`, "flex-ctr-gap");
         for (let j=0; j < new_display[0].length; j++) {
             new_row_div.appendChild(new_display[i][j]);
         }
         chosen_parent_element.appendChild(new_row_div);
-    } 
+    }
+
     return 1;
 }
 
