@@ -1,0 +1,45 @@
+:root {
+    --primary-clr: white;
+    --secondary-clr: gray;
+    --tertiary-clr: gray;
+    --dark-clr: black;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* General Utility  */
+
+.flex-ctr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-ctr-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.test {
+    border: solid 2px purple;
+}
+
+
+
+/* Navigation Bar */
+
+
+/* Main Section */
+
+
+/* Footer */
+
+
