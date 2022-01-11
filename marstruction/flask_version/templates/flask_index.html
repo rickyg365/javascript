@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/741593f21f.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+
+    <title>Mar Struction</title>
+</head>
+<body>
+    <header>
+        <div class="head-contain">
+            <a href="#" class="logo-container">
+                <h2 class="logo">Sample Logo</h2>
+            </a>
+            <nav class="nav-bar">
+                <a href="#" class="nav-item">Home</a></li>
+                <a href="#" class="nav-item">About</a></li>
+                <a href="#" class="nav-item">Pricing</a></li>
+                <a href="#" class="nav-item">Contact</a></li>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-contain">
+
+            <section>
+                <div id="main-section" class="container">
+                    Main Container
+                </div>
+            </section>
+
+            <section>
+                <div id="about-section" class="container">
+                    About Section
+                </div>
+            </section>
+
+            <section>
+                <div class="sample-container">
+                    <div id="flex-section" class="sample-section">
+                        <h1 class="test-title">Flex</h1>
+                        <div class="flex-parent">
+                            <div class="flex-child sample-grandkid">
+                                Child 1
+                            </div>
+                            <div class="flex-child sample-grandkid">
+                                Child 2
+                            </div>
+                            <div class="flex-child sample-grandkid">
+                                Child 3
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div id="flex-col-section" class="sample-section">
+                        <h1 class="test-title">Flex Column</h1>
+                        <div class="flex-col-parent">
+                            <div class="flex-col-child sample-grandkid">
+                                Child 1
+                            </div>
+                            <div class="flex-col-child sample-grandkid">
+                                Child 2
+                            </div>
+                            <div class="flex-col-child sample-grandkid">
+                                Child 3
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div id="grid-section" class="sample-section">
+                        <h1 class="test-title">Grid</h1>
+                        <div class="grid-parent">
+                            <div class="grid-child sample-grandkid">Child 1</div>
+                            <div class="grid-child sample-grandkid">Child 2</div>
+                            <div class="grid-child sample-grandkid">Child 3</div>
+                            <div class="grid-child sample-grandkid">Child 4</div>
+                            <div class="grid-child sample-grandkid">Child 5</div>
+                            <div class="grid-child sample-grandkid">Child 6</div>
+                            <div class="grid-child sample-grandkid">Child 7</div>
+                            <div class="grid-child sample-grandkid">Child 8</div>
+                            <div class="grid-child sample-grandkid">Child 9</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div id="form-section" class="container">
+                    Test Button
+                    <button type="button" id="test-btn" class="btn">Press Me</button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="foot-links">
+            <a href="#" class="foot-items"><i class="fab fa-twitter-square fa-3x"></i></a>
+            <a href="#" class="foot-items"><i class="fab fa-instagram fa-3x"></i></a>
+            <a href="#" class="foot-items"><i class="fab fa-facebook-square fa-3x"></i></a>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='main.js')}}"></script>
+</body>
+</html>
