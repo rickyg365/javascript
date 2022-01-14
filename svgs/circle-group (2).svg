@@ -1,0 +1,10 @@
+<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="circle-group">
+<g id="circle-animation">
+<rect width="150" height="150" fill="white"/>
+<circle id="great-circle" cx="75" cy="75" r="44" fill="white" stroke="black" stroke-width="2"/>
+<path id="mid-circle" d="M39 75C39 79.9706 34.9706 84 30 84C25.0294 84 21 79.9706 21 75C21 70.0294 25.0294 66 30 66C34.9706 66 39 70.0294 39 75Z" fill="#FFA337" stroke="black" stroke-width="2"/>
+<path id="tiny-circle" d="M110 42.5C110 46.0899 107.09 49 103.5 49C99.9101 49 97 46.0899 97 42.5C97 38.9101 99.9101 36 103.5 36C107.09 36 110 38.9101 110 42.5Z" fill="#FFA337" stroke="black" stroke-width="2"/>
+</g>
+</g>
+</svg>

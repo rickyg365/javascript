@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>SVG Tester</title>
+</head>
+<body>
+    <div class="display-container">
+        <h1>SVG Display</h1>
+        <div class="svg-container">
+            <svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="solar-system-group">
+                    <rect width="150" height="150" fill="white"/>
+                    <g id="earth-system">
+                        <circle id="earth" cx="32.5" cy="67.5" r="7" fill="#6EA8FF" stroke="#ABFF69"/>
+                        <circle id="earth-ctr" cx="32.5" cy="67.5" r="14"/>
+                        <circle id="moon" cx="44" cy="62" r="2" fill="#B4B19F"/>
+                    </g>
+                    <g id="mars-system">
+                        <circle id="mars" cx="134" cy="45" r="9.5" fill="#FFB74C" stroke="#B49E76"/>
+                    </g>
+                    <g id="blank-system">
+                        <circle id="sun" cx="75" cy="75" r="20" fill="#FFF48C"/>
+                    </g>
+                    <circle id="sun_2" cx="75" cy="75" r="19.5" fill="#FFF48C" stroke="#FFA31A"/>
+                </g>
+            </svg>
+            <svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="circle-group">
+                    <circle id="great-circle" cx="75" cy="75" r="44" fill="white" stroke="black" stroke-width="2"/>
+                    <g id="circle-animation">
+                        <rect width="150" height="150"/>
+                        <path id="mid-circle" d="M39 75C39 79.9706 34.9706 84 30 84C25.0294 84 21 79.9706 21 75C21 70.0294 25.0294 66 30 66C34.9706 66 39 70.0294 39 75Z" fill="#FFA337" stroke="black" stroke-width="2"/>
+                    </g>
+                    <g id="rotation-2">
+                        <rect width="150" height="150"/>
+                        <path id="tiny-circle" d="M110 42.5C110 46.0899 107.09 49 103.5 49C99.9101 49 97 46.0899 97 42.5C97 38.9101 99.9101 36 103.5 36C107.09 36 110 38.9101 110 42.5Z" fill="#FFA337" stroke="black" stroke-width="2"/>
+                    </g>
+                </g>
+            </svg> 
+        </div>
+        
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

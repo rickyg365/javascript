@@ -1,0 +1,20 @@
+<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="circle-group">
+<g id="circle-animation">
+<rect width="150" height="150" fill="white"/>
+<circle id="great-circle" cx="75" cy="75" r="44" fill="white" stroke="black" stroke-width="2"/>
+<g id="mid-circle">
+<mask id="path-2-inside-1_8_10" fill="white">
+<path d="M40 75C40 80.5228 35.5228 85 30 85C24.4772 85 20 80.5228 20 75C20 69.4772 24.4772 65 30 65C35.5228 65 40 69.4772 40 75Z"/>
+</mask>
+<path d="M40 75C40 80.5228 35.5228 85 30 85C24.4772 85 20 80.5228 20 75C20 69.4772 24.4772 65 30 65C35.5228 65 40 69.4772 40 75Z" fill="#FFA337" stroke="black" stroke-width="4" mask="url(#path-2-inside-1_8_10)"/>
+</g>
+<g id="tiny-circle">
+<mask id="path-3-inside-2_8_10" fill="white">
+<path d="M111 42.5C111 46.6421 107.642 50 103.5 50C99.3579 50 96 46.6421 96 42.5C96 38.3579 99.3579 35 103.5 35C107.642 35 111 38.3579 111 42.5Z"/>
+</mask>
+<path d="M111 42.5C111 46.6421 107.642 50 103.5 50C99.3579 50 96 46.6421 96 42.5C96 38.3579 99.3579 35 103.5 35C107.642 35 111 38.3579 111 42.5Z" fill="#FFA337" stroke="black" stroke-width="4" mask="url(#path-3-inside-2_8_10)"/>
+</g>
+</g>
+</g>
+</svg>

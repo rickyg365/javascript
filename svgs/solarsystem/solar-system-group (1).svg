@@ -1,0 +1,38 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="solar-system-group">
+<rect width="500" height="500" fill="white"/>
+<g id="mercury-system">
+<circle id="mercury" cx="196.5" cy="250.5" r="6.5" fill="#8F00FF"/>
+</g>
+<g id="venus-system">
+<circle id="venus" cx="156" cy="250" r="6" fill="#FF7F6E"/>
+</g>
+<g id="earth-system">
+<circle id="earth" cx="107.5" cy="250.5" r="7" fill="#6EA8FF" stroke="#ABFF69"/>
+<circle id="moon" cx="119" cy="245" r="2" fill="#B4B19F"/>
+</g>
+<g id="mars-system">
+<circle id="mars" cx="20" cy="250" r="9.5" fill="#FFB74C" stroke="#B49E76"/>
+</g>
+<g id="sun" filter="url(#filter0_i_4_2)">
+<circle cx="255" cy="255" r="25" fill="url(#paint0_radial_4_2)"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_i_4_2" x="230" y="230" width="50" height="50" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feMorphology radius="2" operator="erode" in="SourceAlpha" result="effect1_innerShadow_4_2"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="2.5"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.748519 0 0 0 0 0.371296 0 0 0 0.8 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_4_2"/>
+</filter>
+<radialGradient id="paint0_radial_4_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(255 255) rotate(90) scale(25)">
+<stop stop-color="#FFEA2E" stop-opacity="0.92"/>
+<stop offset="1" stop-color="#FFB74C"/>
+</radialGradient>
+</defs>
+</svg>
