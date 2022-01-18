@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Game Map Generator</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <section id="title-section">
+            <h1 class="title">Map</h1>
+        </section>
+        <section id="form-section">
+            <form id="map-form" action="/">
+                <input type="number" name="row" id="row-input" placeholder="#rows">
+                <input type="number" name="col" id="col-input" placeholder="#columns">
+
+                <button type=button id="generate" onclick="generateMap()">Generate Map</button>
+            </form>
+        </section>
+        <section class="main-display">
+            <div class="map">
+                <!-- <div class="map-item m1"></div>
+                <div class="map-item m2"></div>
+                <div class="map-item m3"></div>
+                <div class="map-item m4"></div> -->
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+<script src="main.js"></script>
+</body>
+</html>

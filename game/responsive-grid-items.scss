@@ -1,0 +1,78 @@
+$rand-clr: #1f7e99;
+
+$item-count: 4;
+
+$row-count: 2;
+$col-count: 2;
+
+$map-width: 500px;
+$map-height: 500px;
+
+$map-gap: 5px;
+
+$map-item-width: ($map-width/$col-count) - $map-gap;
+$map-item-height: ($map-height/$row-count) - $map-gap;
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+// General
+.flex-ctr {
+    display: flex;
+
+    align-items: center;
+    justify-items: center;
+}
+
+
+// Custom
+.main-display {
+    padding: 1rem;
+
+    width: 90vw;
+    min-height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    // justify-content: center;
+
+    gap: 1rem;
+}
+.title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    padding: 5rem 0rem;
+}
+
+.map {
+    width: $map-width;
+    height: $map-height;
+
+    display: grid;
+
+    grid-template-rows: repeat($row-count, $map-item-height);
+    grid-template-columns: repeat($col-count, $map-item-width);
+
+    // place-items: center;
+    gap: $map-gap;
+}
+
+.map-item {
+    width: $map-item-width;
+    height: $map-item-height;
+
+    background: $rand-clr;
+}
+
+
+
