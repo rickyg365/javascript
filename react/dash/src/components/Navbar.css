@@ -1,0 +1,32 @@
+.nav-container {
+    width: 288px;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+
+    background: blue;
+    transition: 0.5s;
+}
+
+.logo {
+    font-size: 2.5rem;
+    padding: 16px;
+    margin-bottom: 40px;
+    color: white;
+    /* align-self: flex-start; */
+}
+
+.nav-list {
+    width: 100%;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    /* gap: 1rem; */
+
+    align-items: center;
+    /* overflow: hidden; */
+}
