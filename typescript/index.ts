@@ -60,15 +60,38 @@ console.table(movie1);
 
 // Generics
 
-class Observable<T> {
-    constructor(public value: T) {}
-}
+// w/out Generics
+const getLast = (arr: Array<any>) => {
+    return arr[arr.length - 1];
+};
 
-let x: Observable<number>;
+// we lose type definition, l is of type any
+const l = getLast([1,2,3]);
 
-let y: Observable<Movie>;
 
-let z = new Observable(23);
+// w/ Generics
+// T can be whatever name
+const getLastW = <T>(arr: T[]): T => {
+    return arr[arr.length - 1];
+};
+
+// we dont lose type definition, lw is of type number
+const lw = getLastW([1,2,3]);
+
+
+
+
+
+
+// class Observable<T> {
+//     constructor(public value: T) {}
+// }
+
+// let x: Observable<number>;
+
+// let y: Observable<Movie>;
+
+// let z = new Observable(23);
 
 
  
