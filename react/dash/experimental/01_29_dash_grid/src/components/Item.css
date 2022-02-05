@@ -1,0 +1,105 @@
+.item-container {
+    text-align: center;
+    /* Color here changes the color of the dots not the text */
+    background: var(--bkg-clr);
+
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    /* overflow-x: hidden; */
+}
+
+.item-container > a {
+    text-decoration: none;
+    text-align: center;
+
+    font-size: 1.4rem;
+    font-weight: 600;
+
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--main-clr);
+    /*  overflow-x: hidden; */
+}
+
+.item-container:hover > a {
+    color: var(--bkg-clr);
+    background: var(--main-clr);
+}
+
+.item-container:hover > a::before {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    top: -50px;
+
+    width: 50px;
+    height: 50px;
+
+    background: transparent;
+
+    border-radius: 50%;
+
+    box-shadow: 35px 35px 0px 10px var(--main-clr);
+    clip-path: inset(0px -0.4px -0.4px 0px);
+
+    pointer-events: none;
+}
+
+.item-container:hover > a::after {
+    content: "";
+    z-index: 2;
+
+    position: absolute;
+
+    right: 0;
+    top: 50px;
+
+    width: 50px;
+    height: 50px;
+
+    background: transparent;
+
+    border-radius: 50%;
+
+    /* -0.3 clip path fixes right edge glitch */
+    box-shadow: 35px -35px 0px 10px var(--main-clr);
+    clip-path: inset(-0.4px -0.4px 0px 0px);
+
+    pointer-events: none;
+}
+
+@media screen and (max-width: 900px) {
+    .item-container {
+        padding: 0.25rem 0rem;
+        height: 64px;
+    }
+    .item-container > a {
+        font-size: 2rem;
+        width: 100%;
+        height: 100%;
+        /* font-weight: ; */
+    }
+    .item-container:hover > a::before {
+        display: none;
+    }
+
+    .item-container:hover > a::after {
+        display: none;
+    }
+}
