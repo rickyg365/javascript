@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import "./Circle.css";
 
 function Circle(props) {
-    // let maxOffset =  440;
-    let maxOffset = parseInt(props.maxOffset) || 440;
-    let [offset, setOffset] = useState(maxOffset);
+    let maxOffset = 440;
+    let [offset, setOffset] = useState(440);
 
     useEffect(() => {
         setOffset(440 - Math.floor((props.percentage * maxOffset) / 100));
@@ -18,6 +17,15 @@ function Circle(props) {
                     <span className="p-sign">%</span>{" "}
                 </h1>
             </div>
+            {/* Static Svgs */}
+            {/* <img id="loading-img" src={circle} alt="" />
+            <br />
+            <picture id="loading-pic">
+                <source media="(min-width: 800PX)" srcSet={circleClr} />
+                <img src={circle} alt="loading circle" />
+            </picture> */}
+
+            {/* Dynamic Svg */}
             <svg
                 width="160"
                 height="160"
@@ -50,6 +58,25 @@ function Circle(props) {
                     </linearGradient>
                 </defs>
             </svg>
+            {/* <svg
+                width="160"
+                height="160"
+                viewBox="0 0 160 160"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <circle
+                    id="loading-bar"
+                    cx="80"
+                    cy="80"
+                    r="70"
+                    fill="none"
+                    stroke="#76EA81"
+                    strokeWidth="20"
+                    strokeDasharray="440"
+                    strokeDashoffset={offset}
+                />
+            </svg> */}
         </div>
     );
 }
