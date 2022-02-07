@@ -1,0 +1,21 @@
+.school-container {
+    display: flex;
+    gap: 3px;
+    flex-direction: column;
+}
+
+.first-line {
+    display: flex;
+    justify-content: space-between;
+}
+
+.grad-date {
+    padding-right: 22px;
+}
+
+.school-city-state,
+.grad-month-year,
+.relevant-courses {
+    font-weight: 500;
+    font-style: italic;
+}

@@ -1,0 +1,35 @@
+header {
+    line-height: 1.2;
+    height: 128px;
+
+    display: flex;
+    /* outline: 1px solid black; */
+}
+
+/* Text Side */
+.header-txt {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.name {
+    font-size: 2.5rem;
+}
+
+.sub-titles {
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.info {
+    font-size: 0.9rem;
+}
+
+/* Image Side */
+.header-img {
+    /* flex: 1; */
+}
