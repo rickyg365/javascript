@@ -1,8 +1,21 @@
 import "./Resume.css";
 import Header from "./components/header/Header.js";
 import Education from "./components/education/Education";
-import resume_data from "./resume.json";
 
+// Import Sample Data
+import sample_data from "./sample.json";
+
+// Import Personal Data if it exists
+let resume_data = sample_data;
+const resume_path = "./resume.json";
+
+try {
+    resume_data = require(`${resume_path}`);
+} catch (error) {
+    console.error(`Did not find Custom Resume Data: ${resume_path}`);
+}
+
+// Parse Input Json
 let parsed_info = resume_data.info.map((row_text, index) => {
     return (
         <p className={`info-row-${index}`} key={index}>
