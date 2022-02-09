@@ -6,6 +6,7 @@ let testFunction = () => {
         console.log(` -> ${myArray[i-1]}`);
     }
 
+
     return myArray
 }
 
