@@ -1,0 +1,205 @@
+:root {
+    --bkg-clr: rgb(2, 4, 15);
+
+    --header-height: 96px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+header {
+    padding: 0 96px;
+    width: 100vw;
+    height: var(--header-height);
+
+    background: darkcyan;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header > h1 {
+}
+
+nav {
+    height: 100%;
+    /* background: chartreuse; */
+}
+
+.nav-list {
+    list-style: none;
+
+    height: 100%;
+
+    display: flex;
+
+    gap: 2rem;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-list > li {
+    /* background: blue; */
+}
+
+.nav-item {
+    text-decoration: none;
+    background: pink;
+    padding: 0.75rem 0.5rem;
+}
+
+.nav-item:hover {
+    text-decoration: none;
+    color: pink;
+    background: white;
+    padding: 0.75rem 0.5rem;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    background: var(--bkg-clr);
+}
+
+.main-container {
+    width: 100vw;
+    height: calc(100vh - var(--header-height));
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgb(2, 4, 15);
+}
+
+.sun-system {
+    width: 500px;
+    height: 500px;
+    /* 0x0 in the center */
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    border: 2px solid white;
+    animation: rotation 25s linear infinite;
+}
+
+.sun {
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    background: orange;
+
+    border-radius: 50%;
+
+    animation: sun-pulse 3s linear infinite;
+}
+
+.earth-system {
+    position: absolute;
+    /* half the height of the earth system */
+    top: -50px;
+
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--bkg-clr);
+
+    border: 2px solid white;
+    border-radius: 50%;
+
+    animation: rotation 10s linear infinite;
+}
+
+.earth {
+    position: absolute;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    gap: 12px;
+    align-items: center;
+
+    background: lightskyblue;
+
+    border-radius: 50%;
+}
+
+.continent {
+    background: greenyellow;
+    width: 15px;
+    height: 15px;
+}
+
+.moon {
+    position: absolute;
+
+    /* Half the hieght of the moon */
+    right: -10px;
+
+    width: 20px;
+    height: 20px;
+
+    background: rgb(111, 141, 141);
+
+    border-radius: 50%;
+
+    animation: moon-pulse 2s linear infinite;
+}
+
+.c1 {
+    width: 20px;
+    border-radius: 18px 2px 80% 10px;
+}
+
+.c2 {
+    width: 30px;
+    border-radius: 18px 2px 80% 10px;
+}
+
+@keyframes sun-pulse {
+    from {
+        box-shadow: 0 0 1px 3px rgb(255, 192, 75);
+    }
+
+    to {
+        box-shadow: 0 0 30px 12px yellow;
+    }
+}
+@keyframes moon-pulse {
+    from {
+        box-shadow: 0 0 1px 1px rgb(111, 141, 141);
+    }
+
+    to {
+        box-shadow: 0 0 4px 3px powderblue;
+    }
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
