@@ -1,0 +1,2 @@
+mv component_dir ~/github/javascript_projects/react/tester/src/components/
+
