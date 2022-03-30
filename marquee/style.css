@@ -1,0 +1,48 @@
+:root {
+    --duration: 25s;
+    --bkg-color: #fce25b;
+    --repeat: infinite;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+.marquee-container {
+    width: 100vw;
+    height: 96px;
+
+    display: flex;
+
+    white-space: nowrap;
+    overflow: hidden;
+
+    /* Need this or else you can see a tiny gap */
+    background: var(--bkg-color);
+}
+
+@keyframes banner-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.marquee-container > img {
+    /* width: 100%; */
+    display: flex;
+
+    animation: banner-scroll var(--duration) var(--repeat) linear;
+}
+
+/* @media only screen and (max-width: 900px) {
+    .marquee-container > img {
+        width: unset;
+        height: 96px;
+    }
+} */
