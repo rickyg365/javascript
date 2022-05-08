@@ -108,7 +108,7 @@ function colorSample(render_context, max_w, max_h, num_col, num_rows, color_shif
         }
     }
 }
-const drawPath = (render_context, path_coordinates) => {
+const drawPath = (render_context, path_coordinates, style = "stroke") => {
     let step = 0;
     for (let item of path_coordinates) {
         if (step === 0) {
@@ -120,14 +120,19 @@ const drawPath = (render_context, path_coordinates) => {
             render_context === null || render_context === void 0 ? void 0 : render_context.lineTo(item[0], item[1]);
         }
     }
-    // style
-    render_context.strokeStyle = "rgb(200, 200, 200)";
-    // Fill
-    // render_context?.fill();
-    // Stroke
-    render_context.lineWidth = 7;
-    render_context === null || render_context === void 0 ? void 0 : render_context.stroke();
-    render_context === null || render_context === void 0 ? void 0 : render_context.closePath();
+    // Style
+    if (style === "stroke") {
+        render_context.strokeStyle = "rgb(40, 40, 40)";
+        // Stroke
+        render_context.lineWidth = 7;
+        render_context === null || render_context === void 0 ? void 0 : render_context.stroke();
+        render_context === null || render_context === void 0 ? void 0 : render_context.closePath();
+    }
+    else {
+        // Fill
+        render_context.fillStyle = "lightblue";
+        render_context.fill();
+    }
 };
 // Create Function to draw Context
 const drawContext = () => {
@@ -141,21 +146,16 @@ const drawContext = () => {
             g: "x",
             b: "x",
         };
-        // colorSample(
-        //     ctx,
-        //     canvas.width,
-        //     canvas.height,
-        //     32,
-        //     3,
-        //     my_shift_color_map
-        // );
+        colorSample(ctx, canvas.width, canvas.height, 32, 3, my_shift_color_map);
         // Test drawPath
         let drawn_path = [
             [1, 1],
+            [42, 42],
+            [125, 225],
             [500, 300],
-            [550, 380],
+            [640, 480],
         ];
-        // drawPath(ctx, drawn_path);
+        drawPath(ctx, drawn_path, "stroke");
     }
     else {
         // Fallback Code

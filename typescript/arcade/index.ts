@@ -140,7 +140,8 @@ type ListPathCoordinates = PathCoordinate[];
 
 const drawPath = (
     render_context: CanvasRenderingContext2D | null,
-    path_coordinates: ListPathCoordinates
+    path_coordinates: ListPathCoordinates,
+    style: string = "stroke"
 ) => {
     let step = 0;
     for (let item of path_coordinates) {
@@ -152,16 +153,19 @@ const drawPath = (
             render_context?.lineTo(item[0], item[1]);
         }
     }
-    // style
-    render_context!.strokeStyle = "rgb(200, 200, 200)";
+    // Style
+    if (style === "stroke") {
+        render_context!.strokeStyle = "rgb(40, 40, 40)";
 
-    // Fill
-    // render_context?.fill();
-
-    // Stroke
-    render_context!.lineWidth = 7;
-    render_context?.stroke();
-    render_context?.closePath();
+        // Stroke
+        render_context!.lineWidth = 7;
+        render_context?.stroke();
+        render_context?.closePath();
+    } else {
+        // Fill
+        render_context!.fillStyle = "lightblue";
+        render_context!.fill();
+    }
 };
 
 // Create Function to draw Context
@@ -177,22 +181,24 @@ const drawContext = () => {
             g: "x",
             b: "x",
         };
-        // colorSample(
-        //     ctx,
-        //     canvas.width,
-        //     canvas.height,
-        //     32,
-        //     3,
-        //     my_shift_color_map
-        // );
+        colorSample(
+            ctx,
+            canvas.width,
+            canvas.height,
+            32,
+            3,
+            my_shift_color_map
+        );
 
         // Test drawPath
         let drawn_path: ListPathCoordinates = [
             [1, 1],
+            [42, 42],
+            [125, 225],
             [500, 300],
-            [550, 380],
+            [640, 480],
         ];
-        // drawPath(ctx, drawn_path);
+        drawPath(ctx, drawn_path, "stroke");
     } else {
         // Fallback Code
         console.log("running fallback code...");
