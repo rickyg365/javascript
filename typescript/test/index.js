@@ -32,12 +32,22 @@ let movie1 = [
 console.table(movie1);
 console.table(movie1);
 // Generics
-class Observable {
-    value;
-    constructor(value) {
-        this.value = value;
-    }
-}
-let x;
-let y;
-let z = new Observable(23);
+// w/out Generics
+const getLast = (arr) => {
+    return arr[arr.length - 1];
+};
+// we lose type definition, l is of type any
+const l = getLast([1, 2, 3]);
+// w/ Generics
+// T can be whatever name
+const getLastW = (arr) => {
+    return arr[arr.length - 1];
+};
+// we dont lose type definition, lw is of type number
+const lw = getLastW([1, 2, 3]);
+// class Observable<T> {
+//     constructor(public value: T) {}
+// }
+// let x: Observable<number>;
+// let y: Observable<Movie>;
+// let z = new Observable(23);
