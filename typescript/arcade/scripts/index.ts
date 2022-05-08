@@ -1,65 +1,76 @@
-/* 
-Two primitive shapes: 
-----------------------------------------------------------------
-1. rectangles
-2. paths (lists of points connected by lines).
+/* Main */
+class DisplayStatus {
+    // Public
+    width: number;
+    height: number;
+    data: boolean[][];
 
+    constructor(width: number, height: number, input_data: boolean[][] = [[]]) {
+        this.width = width;
+        this.height = height;
 
-Rectangle - 
-----------------------------------------------------------------
-Drawing Functions:
-    1. fillRect(x, y, width, height):   Draws a filled rectangle.
-    2. strokeRect(x, y, width, height): Draws a rectangular outline.
-    3. clearRect(x, y, width, height):  Clears the specified 
-                                        rectangular area, making 
-                                        it fully transparent.
-Notes: 
-    1.  x, y represent top-left corner of the rectangle 
-    2.  all three rectangle functions draw immediately to 
-        the canvas
-----------------------------------------------------------------
+        let new_data = input_data;
 
+        if (input_data[0].length <= 0) {
+            new_data = new Array();
+            for (let i = 0; i < height; i++) {
+                let new_row = new Array();
+                for (let j = 0; j < width; j++) {
+                    new_row.push(false);
+                }
+                new_data.push(new_row);
+            }
+        }
 
-Path - drawing functions
-----------------------------------------------------------------
-Steps:
-    1.  First, you create the path.
-    2.  Then you use drawing commands to draw into the path.
-    3.  Once the path has been created, you can stroke or fill 
-        the path to render it.
+        this.data = new_data;
+    }
 
-Drawing Functions:
-    1. beginPath(): Creates a new path. Once created, future 
-                    drawing commands are directed into the path
-                    and used to build the path up.
-    2. closePath(): Adds a straight line to the path, going to
-                    the start of the current sub-path.
-    3. stroke():    Draws the shape by stroking its outline.
-    4. fill():      Draws a solid shape by filling the path's 
-                    content area.
+    checkSquare(x: number, y: number) {
+        return this.data[y][x];
+    }
 
-Path methods: Methods to set different paths for objects.
+    occupy(x: number, y: number) {
+        this.data[y][x] = true;
+    }
 
-Notes:
-    1. 
-    2. 
-    3. 
-----------------------------------------------------------------
+    empty(x: number, y: number) {
+        this.data[y][x] = false;
+    }
 
+    toggleSquare(x: number, y: number) {
+        if (this.data[y][x]) {
+            this.data[y][x] = false;
+        }
 
-Path2D - Example
-----------------------------------------------------------------
-var rectangle = new Path2D();
-rectangle.rect(10, 10, 50, 50);
+        this.data[y][x] = true;
 
-var circle = new Path2D();
-circle.arc(100, 35, 25, 0, 2 * Math.PI);
+        // ternary
+        // this.data[y][x] = this.data[y][x] === true ? true : false;
+    }
 
-ctx.stroke(rectangle);
-ctx.fill(circle);
-----------------------------------------------------------------
+    occupyArea(x: number, y: number, w: number, h: number) {
+        for (let i = 0; i < w; i++) {
+            for (let j = 0; j < h; j++) {
+                if (i >= this.width) {
+                    console.log("broke i");
+                    break;
+                }
+                if (j >= this.height) {
+                    console.log("broke j");
+                    break;
+                }
 
-*/
+                this.occupy(i + x, j + y);
+            }
+        }
+    }
+}
+
+// Try Display
+let display = new DisplayStatus(3, 3);
+display.toggleSquare(1, 1);
+console.log(display);
+console.log(display.checkSquare(1, 1));
 
 // Connect to Canvas
 const canvas = document.getElementById("arcade-display") as HTMLCanvasElement;
@@ -71,7 +82,7 @@ function drawRect(
     y: number,
     w: number,
     h: number,
-    style: string
+    style: string = "rgb(150, 150, 150)"
 ) {
     /* 
             Error: TS2531: Object is possibly 'null' 
@@ -80,6 +91,17 @@ function drawRect(
             */
     render_context!.fillStyle = style;
     render_context!.fillRect(x, y, w, h);
+}
+
+function drawFloor(
+    render_context: CanvasRenderingContext2D | null,
+    x: number,
+    floor_w: number,
+    floor_h: number,
+    style: string = "rgb(150, 150, 150)"
+) {
+    render_context!.fillStyle = style;
+    render_context!.fillRect(x, canvas.height - floor_h, floor_w, floor_h);
 }
 
 function colorSample(
@@ -135,12 +157,12 @@ function colorSample(
     }
 }
 
-type PathCoordinate = [number, number];
-type ListPathCoordinates = PathCoordinate[];
+type Coordinate = [number, number];
+type PathCoordinates = Coordinate[];
 
 const drawPath = (
     render_context: CanvasRenderingContext2D | null,
-    path_coordinates: ListPathCoordinates,
+    path_coordinates: PathCoordinates,
     style: string = "stroke"
 ) => {
     let step = 0;
@@ -181,24 +203,52 @@ const drawContext = () => {
             g: "x",
             b: "x",
         };
-        colorSample(
-            ctx,
-            canvas.width,
-            canvas.height,
-            32,
-            3,
-            my_shift_color_map
-        );
+        // colorSample(
+        //     ctx,
+        //     canvas.width,
+        //     canvas.height,
+        //     32,
+        //     3,
+        //     my_shift_color_map
+        // );
+        var count = 0;
+
+        // Initial display
+        colorSample(ctx, canvas.width, canvas.height, 2, 2, my_shift_color_map);
+        // Set up interval
+        let my_interval = setInterval(() => {
+            if (count > 15) {
+                clearInterval(my_interval);
+                return;
+            }
+            colorSample(
+                ctx,
+                canvas.width,
+                canvas.height,
+                3 + count,
+                3 + count,
+                my_shift_color_map
+            );
+            // ctx?.restore();
+            count++;
+        }, 500);
 
         // Test drawPath
-        let drawn_path: ListPathCoordinates = [
+        let drawn_path: PathCoordinates = [
             [1, 1],
             [42, 42],
             [125, 225],
             [500, 300],
             [640, 480],
         ];
-        drawPath(ctx, drawn_path, "stroke");
+        // drawPath(ctx, drawn_path, "stroke");
+
+        // drawFloor(ctx, 0, 640, 100, "lightgreen");
+
+        let display = new DisplayStatus(640, 480);
+        display.occupyArea(0, 480 - 100, 640, 100);
+        console.log(display);
+        console.log(display.checkSquare(20, 380));
     } else {
         // Fallback Code
         console.log("running fallback code...");
