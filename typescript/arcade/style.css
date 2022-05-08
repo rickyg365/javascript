@@ -1,0 +1,54 @@
+:root {
+    --bkg-clr: #fff;
+    --font-clr: #111;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.618;
+}
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.arcade-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* border: 1px solid red; */
+    /* background-color: lightblue; */
+}
+
+.arcade-container > canvas {
+    /* background-color: lightcoral; */
+}
