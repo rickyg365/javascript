@@ -140,9 +140,9 @@ const drawContext = () => {
         const ctx = canvas.getContext("2d");
         // drawRect(ctx, 10, 10, 50, 50, "rgba(200, 0, 0)");
         let my_shift_color_map = {
-            r: "y",
+            r: "x",
             g: "x",
-            b: "x",
+            b: "y",
         };
         // colorSample(
         //     ctx,
