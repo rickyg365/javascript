@@ -1,0 +1,50 @@
+:root {
+    --w: 10;
+    --h: 10;
+
+    --tile-w: 25px;
+    --tile-h: 25px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+.flex-ctr {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+}
+
+.screen {
+    display: grid;
+    gap: 2px;
+    grid-template-columns: repeat(var(--w), auto);
+    grid-template-rows: repeat(var(--h), auto);
+}
+
+.tile {
+    width: var(--tile-w);
+    height: var(--tile-h);
+
+    cursor: pointer;
+
+    background-color: lightblue;
+}
+
+.tile:hover {
+    background-color: lightsalmon;
+}
+
+.active-tile {
+    background-color: lightsalmon;
+}
